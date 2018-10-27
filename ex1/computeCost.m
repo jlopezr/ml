@@ -24,13 +24,13 @@ T1 = (H - y) .^ 2;
 T2 = sum(T1);
 J = T2/(2*m);
 
-%--- Vector version ---
-%Elapsed time is 0.000631094 seconds.
-%Elapsed time is 0.000144958 seconds.
+% --- Vector version ---
+% Elapsed time is 0.000631094 seconds.
+% Elapsed time is 0.000144958 seconds.
 %
-%--- Std version ---
-`%Elapsed time is 0.00338197 seconds.
-%Elapsed time is 0.0022378 seconds.
+% --- Std version ---
+% Elapsed time is 0.00338197 seconds.
+% Elapsed time is 0.0022378 seconds.
 
 % =========================================================================
 
