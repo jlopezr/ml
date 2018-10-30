@@ -31,6 +31,14 @@ for iter = 1:num_iters
     s = s .* alpha/m;
     theta = theta - s;
 
+# Vectorized impl
+# =================================  
+# Elapsed time is 0.251368 seconds.
+
+# Non Vectorized impl
+# =================================
+# Elapsed time is 10.8673 seconds.
+    
     % ============================================================
 
     % Save the cost J in every iteration    
