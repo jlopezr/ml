@@ -31,12 +31,22 @@ X = [ones(m, 1) X];
 %       
 
 
+n = size(all_theta, 2);
+A = zeros(m, num_labels);
 
-
-
-
+for i=1:m
+  for k=1:num_labels
+    p = 0;
+    for j=1,n
+      p = p + all_theta(i,j) * X(i,j);
+    endfor
+    A(i,k) = p;
+  endfor
+  
+  [value ind] = max(A(i,:));
+  p(i) = ind;
+endfor
 
 % =========================================================================
-
 
 end

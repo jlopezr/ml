@@ -36,14 +36,35 @@ grad = zeros(size(theta));
 %           grad = grad + YOUR_CODE_HERE (using the temp variable)
 %
 
+%h = sigmoid(X * theta);
+%tmp = (-y .* log(h)) - ((1-y) .* log(1 - h));
+%J = sum(tmp) / m;
 
+%  This also works... avoid the sum by using matmul
+h = sigmoid(X * theta);
+J = 1/m * (-y' * log(h) - (1-y)' * log(1-h));
 
+J = J + (lambda / (2*m)) * sum(theta(2:end) .^ 2);
 
+% vectorized gradient
 
+%%m
 
+%%n = size(theta)
 
+%%theta
 
+%%X
 
+%%h
+
+%%y
+
+grad = (X' * (h - y)) / m;
+
+% Add regularization for gradient
+tmp = (lambda/m) .* theta(2:end);
+grad(2:end) = grad(2:end) + tmp;
 
 % =============================================================
 
