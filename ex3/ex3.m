@@ -75,12 +75,14 @@ fprintf('\nTraining One-vs-All Logistic Regression...\n')
 
 lambda = 0.1;
 
-tic;
-[all_theta] = oneVsAll(X, y, num_labels, lambda);
-toc;
+%tic;
+%[all_theta] = oneVsAll(X, y, num_labels, lambda);
+%toc;
 
-fprintf('Program paused. Press enter to continue.\n');
-pause;
+%fprintf('Program paused. Press enter to continue.\n');
+%pause;
+
+load('all_theta.mat');
 
 
 %% ================ Part 3: Predict for One-Vs-All ================
