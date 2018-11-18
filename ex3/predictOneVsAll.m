@@ -31,21 +31,26 @@ X = [ones(m, 1) X];
 %       
 
 
-for idx = 1:m
-
-  pred = zeros(num_labels,1);
-  for i=1:num_labels
-    elem = X(idx,:);
-    theta = all_theta(i,:);
-
-    p1 = elem * theta';
-    p2 = sigmoid(p1);
-    pred(i) = p2;
-  endfor
-  [value ind] = max(pred);
-
-  p(idx) = ind;
-  
+%for idx = 1:m
+%
+%  pred = zeros(num_labels,1);
+%  for i=1:num_labels
+%    elem = X(idx,:);
+%    theta = all_theta(i,:);
+%
+%    p1 = elem * theta';
+%    p2 = sigmoid(p1);
+%    pred(i) = p2;
+%  endfor
+%  [value ind] = max(pred);
+%
+%  p(idx) = ind;
+%endfor  
 % =========================================================================
+
+T = X * all_theta';
+T = sigmoid(T);
+[V I] = max(T,[],2);
+p = I;
 
 end
